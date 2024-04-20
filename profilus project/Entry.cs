@@ -17,5 +17,5 @@ namespace profilus_project
         public string key { get; set; } // переменная key, string типа.
         public int value { get; set; }// переменная value, int типа.
     };
-   
+
 }

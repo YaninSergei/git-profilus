@@ -27,16 +27,16 @@ namespace Program
 
             List<Entry> entries = new List<Entry>(); // Создаем список параметризуемый классом Entry
 
-            WorkComPort (PriemData, entries);
+            WorkComPort(PriemData, entries);
 
             IShowEntries dataprint = new ConsoleShowData();
 
 
-            dataprint.show_entries(entries);
+            dataprint.ShowEntries(entries);
         }
 
 
-    static void WorkComPort(string PriemData, List<Entry> entries)
+        static void WorkComPort(string PriemData, List<Entry> entries)
         {
 
             string[] datas = PriemData.Split(',');
@@ -53,52 +53,9 @@ namespace Program
             }
 
 
-         }
+        }
 
 
 
     }
 }
-
-/*
-namespace Program
-{
-
-    interface IPriemData
-    {
-        string GetData();
-    }
-
-
-    interface IDataEntries
-    {
-        void EnteriesData(IPriemData dataPrinyatie);
-    }
-
-    class ConsoleDataEntries : IDataEntries
-    {
-        public void EnteriesData(IPriemData dataPrinyatie)
-        {
-            Console.WriteLine(dataPrinyatie.GetData());
-        }
-    }
-
-    class PeremennayaPriemData : IPriemData
-    {
-        public string GetData();
-    }
-
-
-    class Program
-    {
-        public static string Peremennya = "AB =001, BC =002,CD =003, DE =004";
-
-        static void Main(string[] args)
-        {
-            IDataEntries dataEntries = new ConsoleDataEntries();
-        }
-
-    }
-
-}
-*/

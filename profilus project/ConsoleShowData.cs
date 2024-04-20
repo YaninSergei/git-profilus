@@ -8,7 +8,7 @@ namespace profilus_project
 {
     class ConsoleShowData : IShowEntries
     {
-        public void show_entries(List<Entry> prientries)
+        public void ShowEntries(List<Entry> prientries)
         {
             Console.WriteLine(prientries);
             Console.WriteLine(prientries.Count);

@@ -10,6 +10,7 @@ namespace profilus_project
     {
         public void ShowEntries(List<Entry> prientries)
         {
+            Console.WriteLine("Начал Сообщение");
             Console.WriteLine(prientries);
             Console.WriteLine(prientries.Count);
             for (int i = 0; i < prientries.Count; i++)
@@ -18,6 +19,8 @@ namespace profilus_project
                 Console.WriteLine("Значение:" + prientries[i].value);
 
             }
-        }
+            Console.WriteLine(" Конец Сообщение");
+            Console.WriteLine("");
+        }   
     }
 }

@@ -10,7 +10,7 @@ namespace profilus_project
 {
     interface IShowEntries
     {
-        void ShowEntries(List<Entry> prientries);
+       void ShowEntries(List<Entry> prientries);
     }
 
 }

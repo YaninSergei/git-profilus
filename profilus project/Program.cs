@@ -9,51 +9,39 @@ using static System.Runtime.InteropServices.JavaScript.JSType;
 using static profilus_project.Entry;
 using static profilus_project.IShowEntries;
 using profilus_project;
-
+using static profilus_project.WProtocolParser;
 namespace Program
 {
 
 
     class Program
     {
-        static string PriemData = "AB =001, BC =002,CD =003, DE =004";
+
 
         static List<Entry> entries = new List<Entry>(); // Создаем список параметризуемый классом Entry
 
-
+        
         static void Main(string[] args) // Метод Main - точка входа в пользовательский код, сигнатурный метод. 
         {
-            string PriemData = "AB =001, BC =002,CD =003, DE =004";
+            string PriemData = "AB=001,BC=002,\nCD=003,DE=004\n";
+            WProtocolParser Parser = new WProtocolParser();
 
             List<Entry> entries = new List<Entry>(); // Создаем список параметризуемый классом Entry
 
-            WorkComPort(PriemData, entries);
-
-            IShowEntries dataprint = new ConsoleShowData();
-
-
-            dataprint.ShowEntries(entries);
-        }
-
-
-        static void WorkComPort(string PriemData, List<Entry> entries)
-        {
-
-            string[] datas = PriemData.Split(',');
-            for (int i = 0; i < datas.Length; i++)
+            for (int i = 0; i < PriemData.Length; i++) 
             {
-                string[] fields = datas[i].Split("=");
-
-                string name = fields[0];
-                int value = Convert.ToInt32(fields[1]);
-                // Если размер Fields не равен 2-м то я ни"я не делаю
-                Entry e = new Entry(name, value);
-                e.value = value;
-                entries.Add(e);
+                Parser.WorkComPort(Convert.ToString(PriemData[i]), entries);
+                
             }
 
+            
+            
 
         }
+
+
+
+
 
 
 
